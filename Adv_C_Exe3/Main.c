@@ -112,7 +112,53 @@ To fix word with # enter: 3 \n To delete data choose: 4\n To print stack choose:
 		}
 		case 2:
 		{
+			Queue x;
+			initQueue(&x);
+			int data;
 
+
+			int choosx;
+			while (1)
+			{
+				printf("\nTo print the queue choos: 1\n To insert new value to queue enter :2 \n To Rotate queue choos : 3\n");
+				fseek(stdin, 0, SEEK_END);
+				scanf("%d", &choosx);
+				switch (choosx)
+				{
+				case 1: //print
+				{
+					printf("The queue you choose\n");
+					print(& x);
+					break;
+	
+				}
+				case 2://Add Value to queue
+				{
+					printf("Enter Data in Queue\n");
+					scanf_s("%d", &data);
+					enqueue(&x, data);
+					break;
+				}
+				case 3:
+				{
+
+				}
+				default:
+					break;
+				}
+
+			}
+
+			printf("\n");
+			printf("Rotating:\n");
+			rotateQueue(&x);
+			printf("\n");
+			printf("Sorting:\n");
+			sortKidsFirst(&x);
+			printf("\n");
+			printf("Cut and replace:\n");
+			cutAndReplace(&x);
+			
 		}
 		default:
 			break;
@@ -140,3 +186,5 @@ void prinurrenttack(Stack* s)
 	}
 	printf("\n");
 }
+
+
