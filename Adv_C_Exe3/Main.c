@@ -82,7 +82,8 @@ To fix word with # enter: 3 \n To delete data choose: 4\n To print stack choose:
 		}
 		case 7:
 		{
-			printf(" The latter of Latter after pop is: %c ", pop(&ps));
+			printf(" The latter of Latter after pop is: %c  \n", pop(&ps));
+			break;
 		}
 		case 8:
 		{
@@ -110,4 +111,5 @@ void prinurrenttack(Stack* s)
 		printf("%c  ", tm->data);
 		tm = tm->next;
 	}
+	printf("\n");
 }

@@ -102,7 +102,7 @@ void flipBetweenHashes(const char* sentence)
 
 int isPalindrome(Stack* s)
 {
-	if (!isEmptyStack(&s))
+	if (isEmptyStack(&s))
 		return 0;
 	Stack Top1, Top2;
 	initStack(&Top1); initStack(&Top2);
