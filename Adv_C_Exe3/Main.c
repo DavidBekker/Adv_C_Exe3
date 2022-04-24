@@ -115,49 +115,54 @@ To fix word with # enter: 3 \n To delete data choose: 4\n To print stack choose:
 			Queue x;
 			initQueue(&x);
 			int data;
-
-
 			int choosx;
 			while (1)
 			{
-				printf("\nTo print the queue choos: 1\n To insert new value to queue enter :2 \n To Rotate queue choos : 3\n");
+				printf("\nTo print the queue choos: 1\n To insert new value to queue enter :2 \n To Rotate queue choos : 3");
+				printf("\nTo Sort the queue choos : 4 \n");
+
 				fseek(stdin, 0, SEEK_END);
 				scanf("%d", &choosx);
 				switch (choosx)
 				{
 				case 1: //print
 				{
-					printf("The queue you choose\n");
-					print(& x);
+					printf("\nThe queue you choose\n");
+					print(&x);
+					printf("\n");
 					break;
 	
 				}
 				case 2://Add Value to queue
 				{
-					printf("Enter Data in Queue\n");
+					printf("\nEnter Data in Queue\n");
 					scanf_s("%d", &data);
 					enqueue(&x, data);
 					break;
 				}
 				case 3:
 				{
-
+					printf("\nRotating:\n");
+					rotateQueue(&x);
+					break;
+				}
+				case 4:
+				{
+					printf("\nSorting:\n");
+					sortKidsFirst(&x);
+					break;
+				}
+				case 5:
+				{
+					printf("Cut and replace:\n");
+					cutAndReplace(&x);
+					break;
 				}
 				default:
 					break;
 				}
 
 			}
-
-			printf("\n");
-			printf("Rotating:\n");
-			rotateQueue(&x);
-			printf("\n");
-			printf("Sorting:\n");
-			sortKidsFirst(&x);
-			printf("\n");
-			printf("Cut and replace:\n");
-			cutAndReplace(&x);
 			
 		}
 		default:

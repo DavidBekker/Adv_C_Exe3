@@ -66,7 +66,7 @@ int isEmptyQueue(const Queue* q)
 void print(Queue* q)
 {
 	if (isEmptyQueue(q)) {
-		printf("Empty queue!");
+		printf("Empty queue!\n");
 		return;
 	}
 
