@@ -16,9 +16,14 @@ void initQueue(Queue* q)
 
 void destroyQueue(Queue* q)
 {
+	if (isEmptyQueue(q)) {
+		printf("\nEmpty queue! noting to remove\n");
+		return 0;
+	}
 	while (!isEmptyQueue(q))
 		dequeue(q);
-	free(q);
+
+	printf("\n All data is removed \n");
 }
 
 void enqueue(Queue* q, unsigned int data)
@@ -85,19 +90,20 @@ void print(Queue* q)
 
 void rotateQueue(Queue* q)
 {
+	if (isEmptyQueue(q)) {
+		printf("\nEmpty queue!\n");
+		return;
+	}
 	intNode* n1 = q->head;
 	intNode* n2 = q->tail;
 	int x = n2->data;
 	int temp;
-	if (isEmptyQueue(q)) {
-		printf("Empty queue!");
-		return;
-	}
 	while (n1->data != x) {
 		temp = dequeue(q);
 		enqueue(q, temp);
 		n1 = q->head;
 	}
+	printf("the new Queue after Rotate\n");
 	print(q);
 }
 

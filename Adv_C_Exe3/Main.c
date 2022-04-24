@@ -118,9 +118,9 @@ To fix word with # enter: 3 \n To delete data choose: 4\n To print stack choose:
 			int choosx;
 			while (1)
 			{
-				printf("\nTo print the queue choos: 1\n To insert new value to queue enter :2 \n To Rotate queue choos : 3");
-				printf("\nTo Sort the queue choos : 4 \n");
-
+				printf("\nTo print the queue choos: 1\nTo insert new value to queue enter :2 \nTo Rotate queue choos : 3");
+				printf("\nTo Sort the queue choos : 4 \nTo cut and replace Queue choos :5 \nTo Delete Last data from queue choos: 6\n");
+				printf("To Delete the queue choos : 7\nTo Rotate Queue choos: 8\n");
 				fseek(stdin, 0, SEEK_END);
 				scanf("%d", &choosx);
 				switch (choosx)
@@ -156,6 +156,25 @@ To fix word with # enter: 3 \n To delete data choose: 4\n To print stack choose:
 				{
 					printf("Cut and replace:\n");
 					cutAndReplace(&x);
+					break;
+				}
+				case 6:
+				{
+					int datar = dequeue(&x);
+					printf("\nThe data you remove is: %d\n", datar);
+					break;
+				}
+				case 7:
+				{
+					destroyQueue(&x);
+					break;
+				}
+				case 8:
+				{
+					printf("\n");
+
+					rotateQueue(&x);
+					printf("\n");
 					break;
 				}
 				default:
