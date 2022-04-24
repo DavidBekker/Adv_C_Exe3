@@ -102,15 +102,16 @@ void flipBetweenHashes(const char* sentence)
 
 int isPalindrome(Stack* s)
 {
-	if (isEmptyStack(&s))
-		return 0;
 	Stack Top1, Top2;
 	initStack(&Top1); initStack(&Top2);
 	Top1.head = s->head;
 	Top2.head = s->head;
+	if (isEmptyStack(&Top1))
+		return 0;
 	int count = Stackleanght(&Top1);
 
 	Top1.head = s->head;
+
 	for (count; count > 0; count--)
 	{
 		for (int i = count - 1; i > 0; i--)
